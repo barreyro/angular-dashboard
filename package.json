@@ -1,0 +1,17 @@
+{
+  "name": "angular-dashboard",
+  "version": "1.0.0",
+  "description": "A NodeJS app using Express, Angular, and Bootstrap",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barreyro/angular-dashboard.git"
+  },
+  "author": "Stephanie Barreyro",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "engine": {
+    "node": "4.1.1"
+  }
+}
