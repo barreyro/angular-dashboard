@@ -12,14 +12,36 @@
   <div>
     <p> Hello, World</p>
   </div>
-  <div id="dashboard" ng-controller="StudentListCtrl">
-    <div>
-      <li ng-repeat="student in students">
-      <span>{{student.studentName}}</span>
-      <span>{{student.guidanceCounselor}}</span>
-      <span>{{student.guidanceCounselorEmail}}</span>
-      <span>{{student.attendanceYtd}}</span>
-      </li>
+  <div class="container" ng-controller="StudentListCtrl">
+    <div class="row">
+      <div class="col-xs-3 col-sm-2" id="sidebar">
+        <div>emails</div>
+        <div>threshold</div>
+      </div>
+
+      <div class="col-xs-9 col-sm-10" id="results">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4" id="statistics">
+            <div class="row">
+              <div class="col-xs-6 col-sm-12">
+                [median]
+              </div>
+              <div class="col-xs-6 col-sm-12">
+                [mean]
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-8" id="roster">
+            <li ng-repeat="student in students">
+              <span>{{student.studentName}}</span>
+              <span>{{student.guidanceCounselor}}</span>
+              <span>{{student.guidanceCounselorEmail}}</span>
+              <span>{{student.attendanceYtd}}</span>
+            </li>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>
