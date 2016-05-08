@@ -1,16 +1,7 @@
 var schoolDashboard = angular.module('schoolDashboard', []);
 
-schoolDashboard.controller('StudentListCtrl', function($scope) {
-  $scope.students = [
-    {'studentName': 'Mickey Mouse',
-     'guidanceCounselor': 'Mike Wazowski',
-     'guidanceCounselorEmail': 'mwazowski@monstersu.com',
-     'attendanceYtd': '12'
-    },
-    {'studentName': 'Minnie Mouse',
-     'guidanceCounselor': 'Mike Wazowski',
-     'guidanceCounselorEmail': 'mwazowski@monstersu.com',
-     'attendanceYtd': '2'
-    }
-  ];
+schoolDashboard.controller('StudentListCtrl', function($scope, $http) {
+  $http.get('https://script.google.com/macros/s/AKfycbxtbtw8aL1oY3eyxjFE98kOCqdaG4T4pWvPbNcEv9PlWHPbHQF_/exec').success(function(data) {
+    $scope.students = data;
+  });
 });
