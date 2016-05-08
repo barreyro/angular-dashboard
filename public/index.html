@@ -15,8 +15,13 @@
   <div class="container" ng-controller="StudentListCtrl">
     <div class="row">
       <div class="col-xs-3 col-sm-2" id="sidebar">
-        <div>emails</div>
-        <div>threshold</div>
+        <div id="email">
+          <label>Counselor Email <input ng-model="search.guidanceCounselorEmail"></label><br>
+        </div>
+
+        <div>
+          <label>Threshold <input ng-model="search.attendanceYtd"></label><br>
+        </div>
       </div>
 
       <div class="col-xs-9 col-sm-10" id="results">
@@ -33,7 +38,7 @@
           </div>
 
           <div class="col-xs-12 col-sm-8" id="roster">
-            <li ng-repeat="student in students">
+            <li ng-repeat="student in students | filter:search:strict">
               <span>{{student.studentName}}</span>
               <span>{{student.guidanceCounselor}}</span>
               <span>{{student.guidanceCounselorEmail}}</span>
