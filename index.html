@@ -1,13 +1,24 @@
 <!doctype html>
-<html lang="en" ng-app="absentDashboard">
+<html lang="en" ng-app="schoolDashboard">
 <head>
   <meta charset="utf-8">
   <title>Absent Students</title>
-  <script src="public/js/lib/angular/angular.min.js"></script>
+  <script src="public/js/lib/angular.min.js"></script>
+  <script src="public/js/controllers.js"></script>
 </head>
 <body>
   <div>
     <p> Hello, World</p>
+  </div>
+  <div id="dashboard" ng-controller="StudentListCtrl">
+    <div>
+      <li ng-repeat="student in students">
+      <span>{{student.studentName}}</span>
+      <span>{{student.guidanceCounselor}}</span>
+      <span>{{student.guidanceCounselorEmail}}</span>
+      <span>{{student.attendanceYtd}}</span>
+      </li>
+    </div>
   </div>
 </body>
 </html>
