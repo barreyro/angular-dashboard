@@ -5,44 +5,46 @@
   <title>Absent Students</title>
   <link rel="stylesheet" href="lib/css/bootstrap.min.css" />
   <link rel="stylesheet" href="lib/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="lib/css/main.css" />
+  <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
 
   <script src="/lib/angular.min.js"></script>
   <script src="/app/controllers.js"></script>
 </head>
 <body>
-  <nav class="navbar navbar-default">
-    <h2>Counselor Dashboard</h2>
+  <nav class="navbar">
+    <h2>DASHBOARD</h2>
   </nav>
   <div class="container" ng-controller="StudentListCtrl">
-    <div class="row">
+    <div class="row" id="form-box">
       <div class="col-xs-12 col-sm-3" id="sidebar">
-        <div id="email">
-          <label>Counselor Email <input ng-model="search.guidanceCounselorEmail"></label><br>
+        <div id="email"><br>
+          <label>Counselor Email<br> <input ng-model="search.guidanceCounselorEmail"></label><br>
           </span>
         </div>
 
         <div>
-          <label>Min Threshold <input ng-model="minAttendance"></label><br>
-          <label>Max Threshold <input ng-model="maxAttendance"></label><br>
+          <label>Min Threshold-Attendance<input ng-model="minAttendance"></label><br>
+          <label>Max Threshold-Attendance<input ng-model="maxAttendance"></label><br>
         </div>
       </div>
 
       <div class="col-xs-12 col-sm-9" id="results">
         <div class="row">
-          <div class="col-xs-12 col-sm-2" id="statistics">
+          <div class="col-xs-12" id="statistics">
             <div class="row">
               <div class="panel-group">
-                <div class="panel-info col-xs-6 col-sm-12">
+                <div class="col-xs-6" id='median-thres'>
                   <div class="panel-heading">
-                    <h3 class="panel-title">Median</h3>
+                    <h3 class="panel-title">MEDIAN</h3>
                   </div>
                   <div class="panel-body">
                       <span> {{getMedian(filteredThreshold, 'attendanceYtd') }} </span>
                   </div>
                 </div>
-                <div class="panel-info col-xs-6 col-sm-12">
+                <div class="col-xs-6" id='average-thres'>
                   <div class="panel-heading">
-                    <h3 class="panel-title">Average</h3>
+                    <h3 class="panel-title">AVERAGE</h3>
                   </div>
                   <div class="panel-body">
                     <span> {{getAverage(filteredThreshold, 'attendanceYtd') }} </span>
@@ -52,7 +54,7 @@
             </div>
           </div>
 
-          <div class="col-xs-12 col-sm-10" id="roster">
+          <div class="col-xs-12" id="roster">
             <table class="table table-hover">
               <thead>
                 <tr>

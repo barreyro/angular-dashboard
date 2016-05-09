@@ -1,0 +1,47 @@
+body {
+  font-family: 'Questrial', sans-serif;
+  background-color: #563c5c;
+}
+
+.navbar {
+  background: #0C090A;
+  color: white;
+  text-align: center;
+}
+
+#form-box {
+  background:#7f7f7f;
+  background:rgba(0,0,0,0.5);
+  color: #b9a9e0;
+  padding-left: 10px;
+}
+
+.navbar .h2 {
+  color: white;
+}
+
+#roster {
+  background:#7f7f7f;
+  background:rgba(0,0,0,0.5);
+  color: #b9a9e0;
+}
+
+#median-thres{
+  color: #b9a9e0;
+  text-align: center;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  margin-top: 1em;
+  border-color: black;
+  background-color: black;
+}
+
+#average-thres{
+  background-color: black;
+  color: #b9a9e0;
+  text-align: center;
+  margin-top: 1em;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: black;
+}
