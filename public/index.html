@@ -20,7 +20,8 @@
         </div>
 
         <div>
-          <label>Threshold <input ng-model="search.attendanceYtd"></label><br>
+          <label>Min Threshold <input ng-model="minAttendance"></label><br>
+          <label>Max Threshold <input ng-model="maxAttendance"></label><br>
         </div>
       </div>
 
@@ -38,7 +39,7 @@
           </div>
 
           <div class="col-xs-12 col-sm-8" id="roster">
-            <li ng-repeat="student in students | filter:search:strict">
+            <li ng-repeat="student in students | filter:search:strict | filter:thresholdFilter">
               <span>{{student.studentName}}</span>
               <span>{{student.guidanceCounselor}}</span>
               <span>{{student.guidanceCounselorEmail}}</span>
