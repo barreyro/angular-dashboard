@@ -4,19 +4,21 @@
   <meta charset="utf-8">
   <title>Absent Students</title>
   <link rel="stylesheet" href="lib/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="lib/css/font-awesome.min.css"/>
 
   <script src="/lib/angular.min.js"></script>
   <script src="/app/controllers.js"></script>
 </head>
 <body>
-  <div>
-    <p> Hello, World</p>
-  </div>
+  <nav class="navbar navbar-default">
+    <h2>Counselor Dashboard</h2>
+  </nav>
   <div class="container" ng-controller="StudentListCtrl">
     <div class="row">
-      <div class="col-xs-3 col-sm-2" id="sidebar">
+      <div class="col-xs-12 col-sm-3" id="sidebar">
         <div id="email">
           <label>Counselor Email <input ng-model="search.guidanceCounselorEmail"></label><br>
+          </span>
         </div>
 
         <div>
@@ -25,29 +27,48 @@
         </div>
       </div>
 
-      <div class="col-xs-9 col-sm-10" id="results">
+      <div class="col-xs-12 col-sm-9" id="results">
         <div class="row">
-          <div class="col-xs-12 col-sm-4" id="statistics">
+          <div class="col-xs-12 col-sm-2" id="statistics">
             <div class="row">
-              <div class="col-xs-6 col-sm-12">
-                Median:
-                <span> {{getMedian(filteredThreshold, 'attendanceYtd') }} </span>
-              </div>
-              <div class="col-xs-6 col-sm-12">
-                Average:
-                <span> {{getAverage(filteredThreshold, 'attendanceYtd') }} </span>
+              <div class="panel-group">
+                <div class="panel-info col-xs-6 col-sm-12">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Median</h3>
+                  </div>
+                  <div class="panel-body">
+                      <span> {{getMedian(filteredThreshold, 'attendanceYtd') }} </span>
+                  </div>
+                </div>
+                <div class="panel-info col-xs-6 col-sm-12">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Average</h3>
+                  </div>
+                  <div class="panel-body">
+                    <span> {{getAverage(filteredThreshold, 'attendanceYtd') }} </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col-xs-12 col-sm-8" id="roster">
-            <li ng-repeat="student in students | filter:search:strict | filter:thresholdFilter as filteredThreshold">
-              <span>{{student.studentName}}</span>
-              <span>{{student.guidanceCounselor}}</span>
-              <span>{{student.guidanceCounselorEmail}}</span>
-              <span>{{student.attendanceYtd}}</span>
-            </li>
-            <span> Average: {{getMedian(filteredThreshold, 'attendanceYtd') }} </span>
+          <div class="col-xs-12 col-sm-10" id="roster">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Student Name</th>
+                  <th>Counselor Email</th>
+                  <th>Attendance YTD</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="student in students | filter:search:strict | filter:thresholdFilter as filteredThreshold">
+                  <td><span>{{student.studentName}}</span></td>
+                  <td><span>{{student.guidanceCounselorEmail}}</span></td>
+                  <td><span>{{student.attendanceYtd}}</span></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
